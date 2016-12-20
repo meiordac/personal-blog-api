@@ -1,8 +1,7 @@
 #app/controllers/application_controller.rb
 class ApplicationController < ActionController::API
- before_action :authenticate_request, :except => [:show, :index]
   attr_reader :current_user
-
+  before_action :authenticate_request, :except => [:show, :index, :create]
   private
 
   def authenticate_request
