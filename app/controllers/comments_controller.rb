@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
-  before_action :authenticate_request, :except => [:show, :index]
+
 
   # GET /comments
   def index
@@ -47,6 +47,6 @@ class CommentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:id_post, :content, :author, :published_at, :avatar)
+      params.require(:comment).permit(:id_post, :content, :author, :avatar, :upvote, :published_at, :avatar)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213134259) do
+ActiveRecord::Schema.define(version: 20170119164019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20161213134259) do
     t.string   "content"
     t.string   "author"
     t.datetime "published_at"
-    t.string   "avatar"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "upvote"
+    t.string   "avatar"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161213134259) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "avatar"
   end
 
 end
